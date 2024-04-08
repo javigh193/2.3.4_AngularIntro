@@ -1,0 +1,13 @@
+<div class="cont">
+  <h1>{{title}} {{version}}</h1>
+  <form>
+    R: <input type="number" [(ngModel)]="red" name="red" data-lpignore="true" min="0" max="255" class="text-danger"><br/><br/>
+    G: <input type="number" [(ngModel)]="green" name="green" data-lpignore="true" min="0" max="255" class="text-success"><br/><br/>
+    B: <input type="number" [(ngModel)]="blue" name="blue" data-lpignore="true" min="0" max="255" class="text-primary"><br/><br/>
+    <input type="submit" value="Mix" (click)="mixColor()" class="btn btn-dark">
+  </form>
+</div>
+
+<div id="panetone" [ngStyle]="{'background-color': hexColor}">
+  <p [ngStyle]="hexColor=='#000000' ? {'color': 'white'} : {'color': 'black'}">{{hexColor}}</p>
+</div>
